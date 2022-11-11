@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { Statistics } from './FeedbackWidjet/Statistics';
 import { FeedbackOptions } from './FeedbackWidjet/FeedbackOptions';
 import { Notification } from './FeedbackWidjet/Notification';
@@ -27,7 +26,7 @@ export default function App() {
         break;
 
       default:
-        setGood(state => state + 1);
+        return;
     }
   }
 
@@ -69,11 +68,3 @@ export default function App() {
     </div>
   );
 }
-
-App.propTypes = {
-  state: PropTypes.shape({
-    good: PropTypes.number.isRequired,
-    neutral: PropTypes.number.isRequired,
-    bad: PropTypes.number.isRequired,
-  }),
-};
